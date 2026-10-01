@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "astral-bot-docs",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./docs/.vitepress/dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "observability": { "enabled": true },
+  "env": {
+    "preview": { "name": "astral-bot-docs-preview" },
+    "production": {
+      "name": "astral-bot-docs",
+      "routes": [{ "pattern": "docs.astralbs.xyz", "custom_domain": true }]
+    }
+  }
+}

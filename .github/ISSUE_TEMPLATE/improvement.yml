@@ -1,0 +1,28 @@
+name: Предложение по документации
+description: Новая страница, пример или улучшение структуры
+title: '[Предложение] '
+labels: ['enhancement']
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Что добавить или изменить
+      description: Опишите, чего вам не хватило, когда вы настраивали бота.
+    validations:
+      required: true
+  - type: textarea
+    id: audience
+    attributes:
+      label: Для кого это
+      description: Например, для администратора без опыта программирования или для того, кто пишет сложные шаблоны.
+  - type: input
+    id: place
+    attributes:
+      label: Где это должно быть
+      description: Адрес существующей страницы или раздел, куда это подошло бы.
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Участие
+      options:
+        - label: Готов сам подготовить pull request

@@ -1,0 +1,14 @@
+node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+/.vitepress/
+.wrangler/
+.dev.vars
+.env
+.env.*
+.idea/
+.vscode/
+.claude/
+.DS_Store
+*.log
+.scripts/

@@ -1,0 +1,35 @@
+name: Ошибка или неточность в документации
+description: Опечатка, неверный пример, устаревшая информация или непонятное объяснение
+title: '[Ошибка] '
+labels: ['bug']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо, что заметили. Если исправление очевидное, можно сразу открыть pull request: на каждой странице сайта есть ссылка «Предложить правку этой страницы».
+  - type: input
+    id: page
+    attributes:
+      label: Адрес страницы
+      description: Например, https://docs.astralbs.xyz/templates/beginners/variables
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Что не так
+      description: Процитируйте проблемное место и объясните, в чем ошибка или что осталось непонятным.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Как должно быть
+      description: Если знаете правильный вариант, напишите его. Если проверяли на боте, укажите, что получилось.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Перед отправкой
+      options:
+        - label: Я проверил, что такой задачи еще нет
+          required: true

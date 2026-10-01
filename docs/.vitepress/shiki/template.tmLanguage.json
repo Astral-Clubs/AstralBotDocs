@@ -1,0 +1,161 @@
+{
+  "name": "template",
+  "displayName": "Шаблон",
+  "scopeName": "text.astral.template",
+  "aliases": ["tpl", "astral"],
+  "patterns": [
+    { "include": "#islands" },
+    { "include": "#markup" }
+  ],
+  "repository": {
+    "islands": {
+      "patterns": [
+        { "include": "#comment" },
+        { "include": "#tag" },
+        { "include": "#output" }
+      ]
+    },
+    "comment": {
+      "name": "comment.block.template",
+      "begin": "\\{#-?",
+      "end": "-?#\\}"
+    },
+    "tag": {
+      "begin": "(\\{%-?)\\s*([A-Za-z_]+)?",
+      "beginCaptures": {
+        "1": { "name": "punctuation.section.embedded.begin.template" },
+        "2": { "name": "keyword.control.template" }
+      },
+      "end": "-?%\\}",
+      "endCaptures": {
+        "0": { "name": "punctuation.section.embedded.end.template" }
+      },
+      "patterns": [{ "include": "#expression" }]
+    },
+    "output": {
+      "begin": "\\{\\{-?",
+      "beginCaptures": {
+        "0": { "name": "punctuation.section.embedded.begin.template" }
+      },
+      "end": "-?\\}\\}",
+      "endCaptures": {
+        "0": { "name": "punctuation.section.embedded.end.template" }
+      },
+      "patterns": [{ "include": "#expression" }]
+    },
+    "expression": {
+      "patterns": [
+        { "include": "#string" },
+        { "include": "#map" },
+        {
+          "name": "constant.numeric.template",
+          "match": "\\b\\d+(?:\\.\\d+)?\\b"
+        },
+        {
+          "name": "constant.language.template",
+          "match": "\\b(?:true|false|null|undefined)\\b"
+        },
+        {
+          "match": "\\b([A-Za-z_][A-Za-z0-9_]*)\\s*(?=\\()",
+          "captures": {
+            "1": { "name": "entity.name.function.template" }
+          }
+        },
+        {
+          "match": "(\\|)\\s*([A-Za-z_][A-Za-z0-9_]*)",
+          "captures": {
+            "1": { "name": "keyword.operator.pipe.template" },
+            "2": { "name": "entity.name.function.template" }
+          }
+        },
+        {
+          "match": "(\\.)([A-Za-z_][A-Za-z0-9_]*)",
+          "captures": {
+            "1": { "name": "punctuation.accessor.template" },
+            "2": { "name": "variable.other.property.template" }
+          }
+        },
+        {
+          "name": "keyword.operator.word.template",
+          "match": "\\b(?:and|or|not|in|is|as|with|returning|scoped|by|same|divisible|defined|empty|even|odd|iterable|number)\\b"
+        },
+        {
+          "name": "keyword.control.template",
+          "match": "\\b(?:set|global|if|elseif|else|endif|for|endfor|do|require|return|include|macro|endmacro|filter|endfilter|verbatim|endverbatim|transform|endtransform|break|continue|use|run)\\b"
+        },
+        {
+          "name": "variable.language.template",
+          "match": "\\b(?:member|chat|bot|topic|sourceTopic|message|arguments|parameters|component|button|form|event|astral|loop|infraction|target|level|rewards|rolesAdded|rolesRemoved|case|duration|reason|ladder)\\b"
+        },
+        {
+          "name": "variable.other.template",
+          "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
+        },
+        {
+          "name": "keyword.operator.template",
+          "match": "\\?:|:=|\\.\\.|==|!=|<=|>=|\\*\\*|//|\\+=|-=|\\*=|/=|~=|[+\\-*/%^~<>=?:]"
+        },
+        {
+          "name": "punctuation.template",
+          "match": "[\\[\\](),]"
+        }
+      ]
+    },
+    "map": {
+      "begin": "\\{",
+      "end": "\\}",
+      "beginCaptures": { "0": { "name": "punctuation.template" } },
+      "endCaptures": { "0": { "name": "punctuation.template" } },
+      "patterns": [{ "include": "#expression" }]
+    },
+    "string": {
+      "patterns": [
+        {
+          "name": "string.quoted.single.template",
+          "begin": "'",
+          "end": "'",
+          "patterns": [{ "name": "constant.character.escape.template", "match": "\\\\." }]
+        },
+        {
+          "name": "string.quoted.double.template",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [{ "name": "constant.character.escape.template", "match": "\\\\." }]
+        }
+      ]
+    },
+    "markup": {
+      "patterns": [
+        {
+          "name": "markup.heading.template",
+          "begin": "^(#{1,6})\\s",
+          "beginCaptures": { "1": { "name": "punctuation.definition.heading.template" } },
+          "end": "$",
+          "patterns": [{ "include": "#islands" }]
+        },
+        {
+          "name": "markup.bold.template",
+          "begin": "\\*\\*",
+          "end": "\\*\\*|$",
+          "patterns": [{ "include": "#islands" }]
+        },
+        {
+          "name": "markup.quote.template",
+          "match": "^>\\s?"
+        },
+        {
+          "name": "markup.list.template",
+          "match": "^\\s*(?:[-*+]|\\d+\\.)\\s(?:\\[[ x]\\]\\s)?"
+        },
+        {
+          "name": "entity.name.tag.template",
+          "match": "</?[A-Za-z][A-Za-z0-9-]*(?:\\s[^<>{}]*)?/?>"
+        },
+        {
+          "name": "markup.table.template",
+          "match": "\\|"
+        }
+      ]
+    }
+  }
+}

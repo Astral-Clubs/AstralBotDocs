@@ -1,0 +1,9 @@
+* @Kvoket
+
+/.github/ @Kvoket
+/scripts/ @Kvoket
+/wrangler.jsonc @Kvoket
+/docs/.vitepress/ @Kvoket
+/docs/public/_headers @Kvoket
+/LICENSE @Kvoket
+/LICENSE-CONTENT.txt @Kvoket
