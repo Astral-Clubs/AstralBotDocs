@@ -49,6 +49,7 @@ export const sidebar: DefaultTheme.Sidebar = [
     items: [
       { text: 'Что это такое', link: '/automation/' },
       { text: 'События, условия и действия', link: '/automation/reference' },
+      { text: 'Переменная event', link: '/automation/event' },
       { text: 'События клуба', link: '/automation/clubs' }
     ]
   },
