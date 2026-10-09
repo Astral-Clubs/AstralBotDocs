@@ -45,6 +45,14 @@ export const sidebar: DefaultTheme.Sidebar = [
     ]
   },
   {
+    text: 'Автоматизация',
+    items: [
+      { text: 'Что это такое', link: '/automation/' },
+      { text: 'События, условия и действия', link: '/automation/reference' },
+      { text: 'События клуба', link: '/automation/clubs' }
+    ]
+  },
+  {
     text: 'Продвинутым',
     items: [
       { text: 'Расширенное руководство', link: '/templates/advanced/' },
