@@ -6,7 +6,8 @@ export const sidebar: DefaultTheme.Sidebar = [
     items: [
       { text: 'Шаблоны сообщений', link: '/templates/' },
       { text: 'Редактор шаблона', link: '/templates/editor' },
-      { text: 'Где используются шаблоны', link: '/templates/places' }
+      { text: 'Где используются шаблоны', link: '/templates/places' },
+      { text: 'Логи в лог-чате', link: '/templates/logs' }
     ]
   },
   {
