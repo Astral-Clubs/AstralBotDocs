@@ -5,7 +5,7 @@
 [![Текст: CC BY 4.0](https://img.shields.io/badge/текст-CC%20BY%204.0-blue)](LICENSE-CONTENT.txt)
 [![Код: MIT](https://img.shields.io/badge/код-MIT-green)](LICENSE)
 
-Открытая документация Telegram-бота [Astral Moderation](https://t.me/astralbsmodbot): шаблоны сообщений, пользовательские команды и справочник языка шаблонов. Написана для людей без опыта программирования.
+Открытая документация Telegram-бота [Astral Moderation](https://t.me/astralbsbot): шаблоны сообщений, пользовательские команды и справочник языка шаблонов. Написана для людей без опыта программирования.
 
 **Сайт: [docs.astralbs.xyz](https://docs.astralbs.xyz)**
 
@@ -105,4 +105,4 @@ bun run deploy
 
 - Ошибки и предложения: [задачи](https://github.com/Astral-Clubs/AstralBotDocs/issues/new/choose).
 - Уязвимости: [SECURITY.md](SECURITY.md).
-- Вопросы по работе бота: [@astralbsmodbot](https://t.me/astralbsmodbot).
+- Вопросы по работе бота: [@astralbsbot](https://t.me/astralbsbot).

@@ -78,6 +78,14 @@ export const sidebar: DefaultTheme.Sidebar = [
     ]
   },
   {
+    text: 'Клубы и турниры',
+    items: [
+      { text: 'Команда /clubs', link: '/bot/clubs' },
+      { text: 'Турниры', link: '/bot/tournaments' },
+      { text: 'Верификация группы', link: '/bot/verification' }
+    ]
+  },
+  {
     text: 'Данные Astral',
     items: [{ text: 'Пространство astral', link: '/templates/astral' }]
   },

@@ -1,7 +1,7 @@
 blank_issues_enabled: false
 contact_links:
   - name: Вопрос по работе бота
-    url: https://t.me/astralbsmodbot
+    url: https://t.me/astralbsbot
     about: Если что-то не получается настроить в самом боте, а не в документации, напишите боту в Telegram.
   - name: Сообщить об уязвимости
     url: https://github.com/Astral-Clubs/AstralBotDocs/security/advisories/new
